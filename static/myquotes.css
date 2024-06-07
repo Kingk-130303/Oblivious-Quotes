@@ -93,14 +93,14 @@ h1 {
     #quote-container p, #quotes-container div{
         margin: 10px;
         padding: 10px;
-        font-size: 18px; 
+        font-size: 23px; 
     }
 
 
 
     #remove-button, #back-button {
         padding: 5px 5px;
-        font-size: 15px; 
+        font-size: 12px; 
     }
 }
 
