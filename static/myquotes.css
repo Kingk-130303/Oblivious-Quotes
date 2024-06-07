@@ -90,20 +90,17 @@ h1 {
     }
 
 
-    #quote-container p, #author-quotes-container {
+    #quote-container p, #quotes-container div{
         margin: 10px;
         padding: 10px;
         font-size: 18px; 
     }
 
-    #author-quotes-container {
-        font-size: 18px;
-        max-height: 200px;
-    }
+
 
     #remove-button, #back-button {
-        padding: 8px 8px;
-        font-size: 18px; 
+        padding: 5px 5px;
+        font-size: 10px; 
     }
 }
 
