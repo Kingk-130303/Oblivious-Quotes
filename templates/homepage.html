@@ -98,7 +98,6 @@ document.getElementById('search-input').addEventListener('input', function() {
                         } else {
                             const quoteContainer = document.getElementById('author-quotes-container');
                             quoteContainer.innerHTML = '';
-                            // console.log(data.length)
                             if (data.length === 0) {
                                 const noQuoteElement = document.createElement('p');
                                 noQuoteElement.textContent = 'No quotes found for the author "' + author + '"';

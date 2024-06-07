@@ -16,9 +16,7 @@ body {
   
   h1 {
     cursor: pointer;
-    /* border-radius: 40px; */
-    /* border: 2px solid #3d0a79; */
-    /* background-color: #0d9b23; */
+ 
     font-size: calc(3vh + 2vw); 
     text-align: center;
     color: #8a13f3;
@@ -34,7 +32,7 @@ body {
 #clear-button {
     display: none;
     padding: 10px 20px;
-    background-color: #ff0000; /* Adjust background color */
+    background-color: #ff0000;
     border: none;
     border-radius: 4px;
     color: #fff;
@@ -44,7 +42,7 @@ body {
 }
 
 #clear-button:hover {
-    background-color: #00991f; /* Adjust hover background color */
+    background-color: #00991f; 
 }
 
 #logout-button,#myquotes-button{
@@ -59,7 +57,7 @@ body {
 }
 
 #logout-button:hover,#myquotes-button:hover {
-  background-color: #0d9b23; /* Adjust hover background color */
+  background-color: #0d9b23; 
 }
 
 #add-search-quote-button{
@@ -74,11 +72,10 @@ body {
 }
 
 #add-search-quote-button:hover {
-  background-color: #0d9b23; /* Adjust hover background color */
+  background-color: #0d9b23; 
 }
 
 #login-button {
-  /* margin-left: 4vw; */
   padding: 10px 10px;
   background-color: #3d0a79; 
   border-radius: 40px;
@@ -91,19 +88,16 @@ body {
 }
 
 #login-button:hover {
-  background-color: #0d9b23; /* Adjust hover background color */
+  background-color: #0d9b23; 
 }
 
   
   #navbar {
-    /* border: 3px solid #3d0a79; */
 
-    /* border-radius: 40px; */
     display: flex;
     justify-content:space-evenly;
     align-items: center;
     padding: 10px 0px;
-    /* margin: 0px; */
     background-color: #333;
     color: white;
     height: fit-content;
@@ -120,12 +114,10 @@ body {
 
   .username {
     width: fit-content;
-    /* background-color: #6f0994; */
     font-weight: bolder;
     color: white;
     font-style: oblique;
     font-size: 20px;
-    /* text-align: center; */
     margin: 15px;
     text-transform: capitalize;
   }
