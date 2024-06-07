@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/myquotes.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Quotes</title>
+</head>
+<body>
+    <nav id="navbar">
+        <h1>Oblivious Quotes</h1>
+        <div class="user-info">
+        </div>
+        <button onclick="RedirectToHomePage()">Back To HomePage</button>
+    </nav>
+    <div id="quotes-container"></div>
+
+    <script>
+        function RedirectToHomePage() {
+            window.location.href = "/";
+        }
+
+        async function fetchQuotes() {
+    const response = await fetch("/FetchmyQuotes");
+    const quotes = await response.json();
+    const container = document.getElementById("quotes-container");
+    container.innerHTML = "";
+    if (quotes.length === 0) {
+        container.innerHTML = "<p>You have not saved any quotes</p>";
+    } else {
+    quotes.forEach(quote => {
+        const quoteElement = document.createElement("div");
+        const formattedQuote = quote.quote.replace(/'/g, "\\'");
+        quoteElement.innerHTML = `
+            <p>${quote.quote} - ${quote.author}</p>
+            <button onclick="removeQuote('${quote.user_id}', '${formattedQuote}')">Remove</button>
+        `;
+        container.appendChild(quoteElement);
+    });
+}
+
+
+
+}
+
+        async function removeQuote(userId, quoteText) {
+            if (confirm("Are you sure you want to remove this quote?") === false) {
+                return;
+            }
+            const response = await fetch("/removeQuote", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ user_id: userId, quote: quoteText })
+            });
+
+            if (response.ok) {
+                document.getElementById("quotes-container").innerHTML = "Refreshing....";
+                document.getElementById("quotes-container").style.color = 'white';
+                
+                fetchQuotes();
+                
+
+            } else {
+                console.error("Failed to remove quote");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", fetchQuotes);
+    </script>
+</body>
+</html>

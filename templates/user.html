@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../static/homepage.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote of the Day</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <h1>Oblivious Quotes</h1>
+      <div class="user-info">
+        <!-- <span class="username">  </span> -->
+        <!-- <img src="{{ user_info.get('picture') or 'https://www.gravatar.com/avatar/?d=mp' }}" alt="Profile Picture"> -->
+      </div>
+      <button onclick="RedirectToMyQuotesPage()">My Quotes</button>
+      <button onclick="RedirectToHomePage()">Logout</button>
+    </nav>
+    <div class="username">Welcome!! {{ user_info.get('name') }}</div>
+    <div class="container">
+      <div id="quote-container">
+        <p id="quote">Loading.....</p>
+        <p id="author"></p>
+      </div>
+      <button id="refresh-button">Refresh</button>
+      <button id="add-button" onclick="AddQuote()">Add To My Quotes</button>
+
+      <div id="search-bar">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search by author name"
+        />
+        <button id="search-button">&#128269; Search</button>
+      </div>
+      <div id="clear-button-container">
+        <button id="clear-button" onclick="clearAuthorQuotes()">Clear</button>
+      </div>
+      <div id="author-quotes-container">
+        Searched Author's Quotes will be displayed here
+      </div>
+    </div>
+
+    <script>
+      function RedirectToMyQuotesPage() {
+        window.location.href = "/myQuotes";
+      }
+      function AddQuote() {
+          const quote = document.getElementById("quote").textContent;
+         const author = document.getElementById("author").textContent.replace("~ ", "");
+
+        fetch("/addToMyQuotes", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            quote: quote,
+            author: author,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.error) {
+              alert(data.error);
+            } else {
+              alert(data.message);
+            }
+          });
+      }
+      function AddSearchedQuote(quote, author) {
+        //   const quote = document.getElementById("quote").textContent;
+        //  const author = document.getElementById("author").textContent.replace("~ ", "");
+
+        fetch("/addToMyQuotes", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            quote: quote,
+            author: author,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.error) {
+              alert(data.error);
+            } else {
+              alert(data.message);
+            }
+          });
+      }
+
+
+      document
+        .getElementById("search-input")
+        .addEventListener("input", function () {
+          const clearButton = document.getElementById("clear-button");
+          if (this.value.trim() == "") {
+            clearButton.style.display = "none";
+          } else {
+            clearButton.style.display = "inline-block";
+          }
+        });
+
+      function clearAuthorQuotes() {
+        document.getElementById("search-input").value = "";
+        document.getElementById("author-quotes-container").innerHTML =
+          "Searched Author's Quotes will be displayed here";
+        document.getElementById("clear-button").style.display = "none";
+      }
+      function RedirectToHomePage() {
+        if (confirm("Are you sure you want to logout?"))
+          window.location.href = "/logout";
+      }
+      function fetchQuote() {
+        document.getElementById("quote").textContent = "Loading...";
+        document.getElementById("author").textContent = "";
+
+        setTimeout(() => {
+          fetch("/getQuote")
+            .then((response) => response.json())
+            .then((data) => {
+              document.getElementById("quote").textContent = data[0]["q"];
+              document.getElementById("author").textContent =
+                "~ " + data[0]["a"];
+            });
+        }, 50);
+      }
+      document
+        .getElementById("refresh-button")
+        .addEventListener("click", fetchQuote);
+      fetchQuote();
+
+      document.getElementById("search-button").addEventListener("click", () => {
+        const author = document.getElementById("search-input").value;
+        if (author.trim() !== "") {
+          fetch(`/searchByAuthor?author=${encodeURIComponent(author)}`)
+            .then((response) => response.json())
+
+            .then((data) => {
+              if (data.error) {
+                alert(data.error);
+              } else {
+                const quoteContainer = document.getElementById(
+                  "author-quotes-container"
+                );
+                quoteContainer.innerHTML = "";
+                // console.log(data.length)
+                if (data.length === 0) {
+                  const noQuoteElement = document.createElement("p");
+                  noQuoteElement.textContent =
+                    'No quotes found for the author "' + author + '"';
+                  quoteContainer.appendChild(noQuoteElement);
+                }
+                data.forEach((quote) => {
+                  const quoteElement = document.createElement("div");
+                  quoteElement.innerHTML = `
+                    <p>${quote.q}</p>
+                    <p>~ ${quote.a}</p>
+        <button onclick="AddSearchedQuote(\`${quote.q}\`, \`${quote.a}\`)">Add To My Quotes</button>
+                  `;
+                  quoteContainer.appendChild(quoteElement);
+                });
+              }
+            });
+        }
+      });
+    </script>
+  </body>
+</html>
