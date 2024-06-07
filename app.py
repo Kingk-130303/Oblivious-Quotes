@@ -69,9 +69,8 @@ def logout():
             quote_via=quote_plus,
         )
     )
-print("Before ENV")
+
 mongo_uri = os.getenv('MONGO_URI')
-print(mongo_uri)
 if mongo_uri is None:
     raise ValueError("MONGO_URI environment variable is not set")
 

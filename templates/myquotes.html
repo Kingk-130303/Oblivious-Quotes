@@ -4,14 +4,14 @@
     <link rel="stylesheet" href="../static/myquotes.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Quotes</title>
+    <title>Oblivious Quotes</title>
 </head>
 <body>
     <nav id="navbar">
-        <h1>Oblivious Quotes</h1>
+        <h1 onclick="RedirectToHomePage()">Oblivious Quotes</h1>
         <div class="user-info">
         </div>
-        <button onclick="RedirectToHomePage()">Back To HomePage</button>
+        <button id="back-button" onclick="RedirectToHomePage()"> &#8592; Back</button>
     </nav>
     <div id="quotes-container"></div>
 
@@ -33,7 +33,7 @@
         const formattedQuote = quote.quote.replace(/'/g, "\\'");
         quoteElement.innerHTML = `
             <p>${quote.quote} - ${quote.author}</p>
-            <button onclick="removeQuote('${quote.user_id}', '${formattedQuote}')">Remove</button>
+            <button id = 'remove-button' onclick="removeQuote('${quote.user_id}', '${formattedQuote}')">&#128465; Remove</button>
         `;
         container.appendChild(quoteElement);
     });

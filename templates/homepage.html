@@ -4,20 +4,20 @@
     <link rel="stylesheet" href="../static/homepage.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quote of the Day</title>
+    <title>Oblivious Quotes</title>
    
   </head>
   <body>
       <nav id="navbar">
-        <h1>Oblivious Quotes</h1>
-      <button id="navbutton" onclick="redirectToLoginPage()">Login</button>
+        <h1 onclick="redirectToHomePage()">Oblivious Quotes</h1>
+      <button id="login-button" onclick="redirectToLoginPage()"> &#128274; Login</button>
       </nav>
       <div class="container">
       <div id="quote-container">
         <p id="quote">Loading.....</p>
         <p id="author"></p>
       </div>
-      <button id="refresh-button">Refresh</button>
+      <button id="refresh-button"> &#x21bb; Refresh</button>
       </div>
       <div id="search-bar">
         <input
@@ -40,9 +40,11 @@
 
 
 
-
     
     <script>
+      function redirectToHomePage() {
+        window.location.href = '/';
+      }
 
 document.getElementById('search-input').addEventListener('input', function() {
     const clearButton = document.getElementById('clear-button');

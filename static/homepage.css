@@ -15,10 +15,19 @@ body {
   }
   
   h1 {
-    font-size: 40px;
+    cursor: pointer;
+    border-radius: 40px;
+    border: 2px solid #3d0a79;
+    /* background-color: #0d9b23; */
+    font-size: calc(3vh + 2vw); 
     text-align: center;
     color: #8a13f3;
     margin: 0;
+  }
+
+  h1:hover {
+    border: 2px solid #3e7d8d;
+
   }
 
   #clear-button-container {
@@ -39,11 +48,61 @@ body {
 }
 
 #clear-button:hover {
-    background-color: #990000; /* Adjust hover background color */
+    background-color: #00991f; /* Adjust hover background color */
+}
+
+#logout-button,#myquotes-button{
+  padding: 10px 10px;
+  background-color: #3d0a79; 
+  border-radius: 40px;
+  color: #fff;
+  font-size: calc(1vh + 1vw);
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  border: 3px solid #3d0a79;
+}
+
+#logout-button:hover,#myquotes-button:hover {
+  background-color: #0d9b23; /* Adjust hover background color */
+}
+
+#add-search-quote-button{
+  padding: 10px 10px;
+  background-color: #3d0a79; 
+  border-radius: 40px;
+  color: #fff;
+  font-size: calc(0.8vh + 0.8vw);
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  border: 3px solid #3d0a79;
+}
+
+#add-search-quote-button:hover {
+  background-color: #0d9b23; /* Adjust hover background color */
+}
+
+#login-button {
+  /* margin-left: 4vw; */
+  padding: 10px 10px;
+  background-color: #3d0a79; 
+  border-radius: 40px;
+  color: #fff;
+  font-size: calc(1vh + 1vw);
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  border: 3px solid #3d0a79;
+
+}
+
+#login-button:hover {
+  background-color: #0d9b23; /* Adjust hover background color */
 }
 
   
   #navbar {
+    /* border: 3px solid #3d0a79; */
+
+    /* border-radius: 40px; */
     display: flex;
     justify-content:space-evenly;
     align-items: center;
@@ -84,17 +143,18 @@ body {
     margin: 20px;
     padding: 10px;
     background-color: #3a3a3a;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    border-radius: 40px;
+    border: 3px solid #3d0a79;
   }
   
   #quote {
     font-style: oblique;
-    font-size: 20px;
+    font-size: calc(1vh + 1vw); 
     color: #c1b4b4;
   }
   
   #search-bar {
+    
     margin-top: 20px;
     text-align: center;
   }
@@ -103,9 +163,9 @@ body {
     width: 60%;
     padding: 10px;
     background-color: #3a3a3a;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 40px;
+    border: 3px solid #3d0a79;
+    font-size: calc(1vh + 1vw); 
     box-sizing: border-box;
     color: #fff;
   }
@@ -113,10 +173,10 @@ body {
   #search-button {
     padding: 10px 20px;
     background-color: #3d0a79;
-    border: none;
-    border-radius: 4px;
+    border: 3px solid #3d0a79;
+    border-radius: 40px;
     color: #fff;
-    font-size: 16px;
+    font-size: calc(1vh + 1vw); 
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
@@ -126,13 +186,15 @@ body {
   }
   
   #refresh-button {
+    font-size: calc(1vh + 1vw); 
+    border-radius: 40px;
+    border: 3px solid #3d0a79;
     margin-left: 20px;
     padding: 10px 20px;
     background-color: #3d0a79;
-    border: none;
-    border-radius: 4px;
+
+   
     color: #fff;
-    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
@@ -141,10 +203,11 @@ body {
     margin-left: 20px;
     padding: 10px 20px;
     background-color: #3d0a79;
-    border: none;
-    border-radius: 4px;
+    
     color: #fff;
-    font-size: 16px;
+    font-size: calc(1vh + 1vw); 
+    border-radius: 40px;
+    border: 3px solid #3d0a79;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
@@ -161,7 +224,7 @@ body {
     font-weight: bolder;
     text-align: right;
     font-style: italic;
-    font-size: 15px;
+    font-size: calc(1vh + 1vw); 
     color: #c1b4b4;
   }
   
@@ -173,7 +236,10 @@ body {
     margin: 20px;
     padding: 10px;
     background-color: #3a3a3a;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    border-radius: 40px;
+    border: 3px solid #3d0a79;
+    font-size: calc(1vh + 1vw); 
+
   }
+  
   

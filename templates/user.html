@@ -4,17 +4,15 @@
     <link rel="stylesheet" href="../static/homepage.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quote of the Day</title>
+    <title>Oblivious Quotes</title>
   </head>
   <body>
     <nav id="navbar">
-      <h1>Oblivious Quotes</h1>
+      <h1 onclick="RedirectToHome()">Oblivious Quotes</h1>
       <div class="user-info">
-        <!-- <span class="username">  </span> -->
-        <!-- <img src="{{ user_info.get('picture') or 'https://www.gravatar.com/avatar/?d=mp' }}" alt="Profile Picture"> -->
       </div>
-      <button onclick="RedirectToMyQuotesPage()">My Quotes</button>
-      <button onclick="RedirectToHomePage()">Logout</button>
+      <button id="myquotes-button" onclick="RedirectToMyQuotesPage()">&#128196; My Quotes</button>
+      <button id="logout-button" onclick="RedirectToHomePage()"> &#128274; Logout</button>
     </nav>
     <div class="username">Welcome!! {{ user_info.get('name') }}</div>
     <div class="container">
@@ -22,8 +20,8 @@
         <p id="quote">Loading.....</p>
         <p id="author"></p>
       </div>
-      <button id="refresh-button">Refresh</button>
-      <button id="add-button" onclick="AddQuote()">Add To My Quotes</button>
+      <button id="refresh-button">&#x21bb; Refresh</button>
+      <button id="add-button" onclick="AddQuote()">&#128196; Add To My Quotes</button>
 
       <div id="search-bar">
         <input
@@ -42,6 +40,9 @@
     </div>
 
     <script>
+      function RedirectToHome() {
+        window.location.href = "/";
+      }
       function RedirectToMyQuotesPage() {
         window.location.href = "/myQuotes";
       }
@@ -69,8 +70,6 @@
           });
       }
       function AddSearchedQuote(quote, author) {
-        //   const quote = document.getElementById("quote").textContent;
-        //  const author = document.getElementById("author").textContent.replace("~ ", "");
 
         fetch("/addToMyQuotes", {
           method: "POST",
@@ -118,7 +117,7 @@
         document.getElementById("quote").textContent = "Loading...";
         document.getElementById("author").textContent = "";
 
-        setTimeout(() => {
+    
           fetch("/getQuote")
             .then((response) => response.json())
             .then((data) => {
@@ -126,7 +125,7 @@
               document.getElementById("author").textContent =
                 "~ " + data[0]["a"];
             });
-        }, 50);
+        
       }
       document
         .getElementById("refresh-button")
@@ -147,7 +146,6 @@
                   "author-quotes-container"
                 );
                 quoteContainer.innerHTML = "";
-                // console.log(data.length)
                 if (data.length === 0) {
                   const noQuoteElement = document.createElement("p");
                   noQuoteElement.textContent =
@@ -159,7 +157,7 @@
                   quoteElement.innerHTML = `
                     <p>${quote.q}</p>
                     <p>~ ${quote.a}</p>
-        <button onclick="AddSearchedQuote(\`${quote.q}\`, \`${quote.a}\`)">Add To My Quotes</button>
+        <button id = 'add-search-quote-button' onclick="AddSearchedQuote(\`${quote.q}\`, \`${quote.a}\`)">Add To My Quotes</button>
                   `;
                   quoteContainer.appendChild(quoteElement);
                 });
