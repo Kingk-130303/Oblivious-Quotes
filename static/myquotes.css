@@ -90,7 +90,7 @@ h1 {
     }
 
 
-    #quote-container, #author-quotes-container {
+    #quote-container p, #author-quotes-container {
         margin: 10px;
         padding: 10px;
         font-size: 18px; 

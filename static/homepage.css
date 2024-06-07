@@ -252,8 +252,8 @@ body {
      #author-quotes-container {
          max-height: 200px;
      }
-     #myquotes-button,#logout-button{
-      padding: 2px 2px;
+     #myquotes-button,#logout-button,#login-button {
+      padding: 5px 5px;
      }
  }
   
