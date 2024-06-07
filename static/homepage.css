@@ -16,8 +16,8 @@ body {
   
   h1 {
     cursor: pointer;
-    border-radius: 40px;
-    border: 2px solid #3d0a79;
+    /* border-radius: 40px; */
+    /* border: 2px solid #3d0a79; */
     /* background-color: #0d9b23; */
     font-size: calc(3vh + 2vw); 
     text-align: center;
@@ -25,10 +25,6 @@ body {
     margin: 0;
   }
 
-  h1:hover {
-    border: 2px solid #3e7d8d;
-
-  }
 
   #clear-button-container {
     text-align: center;
@@ -241,5 +237,29 @@ body {
     font-size: calc(1vh + 1vw); 
 
   }
+
+  @media (max-width: 768px) {
+    .container {
+         padding: 10px;
+     }
+ 
+     h1 {
+         font-size: 30px;
+     }
+     
+
+ 
+    .username, #quote, #author {
+         font-size: 18px;
+     }
+ 
+      #quote-container, #author-quotes-container {
+          margin: 10px;
+      }
+ 
+     #author-quotes-container {
+         max-height: 200px;
+     }
+ }
   
   
