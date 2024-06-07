@@ -88,3 +88,62 @@ h1 {
     font-size: calc(1vh + 1vw);
     color: #c1b4b4;
 }
+
+@media (max-width: 768px) {
+    .container {
+         padding: 10px;
+     }
+ 
+     h1 {
+         font-size: 30px;
+     }
+
+
+ 
+    .username, #quote, #author {
+         font-size: 18px;
+     }
+ 
+      #quote-container, #author-quotes-container {
+          margin: 10px;
+      }
+ 
+     #author-quotes-container {
+         max-height: 200px;
+     }
+ }
+  
+ @media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: calc(2vh + 2vw); /* Adjusted to be responsive */
+    }
+
+    .username, #quote, #author {
+        font-size: calc(1.5vh + 1.5vw); /* Adjusted to be responsive */
+    }
+
+    #quote-container, #author-quotes-container {
+        margin: 10px;
+        padding: 10px;
+        font-size: calc(0.8vh + 0.8vw); /* Adjusted to be responsive */
+    }
+
+    #author-quotes-container {
+        max-height: 200px;
+    }
+
+    #remove-button, #back-button {
+        padding: 8px 8px;
+        font-size: calc(0.7vh + 0.7vw); /* Adjusted to be responsive */
+    }
+}
+
+  
