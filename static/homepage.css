@@ -52,7 +52,7 @@ body {
   background-color: #3d0a79; 
   border-radius: 40px;
   color: #fff;
-  font-size: calc(1vh + 1vw);
+  font-size: calc(1vh + 1.5vw);
   cursor: pointer;
   transition: background-color 0.5s ease;
   border: 3px solid #3d0a79;
@@ -83,7 +83,7 @@ body {
   background-color: #3d0a79; 
   border-radius: 40px;
   color: #fff;
-  font-size: calc(1vh + 1vw);
+  font-size: calc(1vh + 1.5vw);
   cursor: pointer;
   transition: background-color 0.5s ease;
   border: 3px solid #3d0a79;
@@ -145,7 +145,7 @@ body {
   
   #quote {
     font-style: oblique;
-    font-size: calc(1vh + 1vw); 
+    font-size: calc(1vh + 1.5vw); 
     color: #c1b4b4;
   }
   
@@ -161,7 +161,7 @@ body {
     background-color: #3a3a3a;
     border-radius: 40px;
     border: 3px solid #3d0a79;
-    font-size: calc(1vh + 1vw); 
+    font-size: calc(1vh + 1.5vw); 
     box-sizing: border-box;
     color: #fff;
   }
@@ -172,7 +172,7 @@ body {
     border: 3px solid #3d0a79;
     border-radius: 40px;
     color: #fff;
-    font-size: calc(1vh + 1vw); 
+    font-size: calc(1vh + 1.5vw); 
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
@@ -182,7 +182,7 @@ body {
   }
   
   #refresh-button {
-    font-size: calc(1vh + 1vw); 
+    font-size: calc(1vh + 1.5vw); 
     border-radius: 40px;
     border: 3px solid #3d0a79;
     margin-left: 20px;
@@ -201,7 +201,7 @@ body {
     background-color: #3d0a79;
     
     color: #fff;
-    font-size: calc(1vh + 1vw); 
+    font-size: calc(1vh + 1.5vw); 
     border-radius: 40px;
     border: 3px solid #3d0a79;
     cursor: pointer;
@@ -220,7 +220,7 @@ body {
     font-weight: bolder;
     text-align: right;
     font-style: italic;
-    font-size: calc(1vh + 1vw); 
+    font-size: calc(1vh + 1.5vw); 
     color: #c1b4b4;
   }
   
@@ -234,7 +234,7 @@ body {
     background-color: #3a3a3a;
     border-radius: 40px;
     border: 3px solid #3d0a79;
-    font-size: calc(1vh + 1vw); 
+    font-size: calc(1vh + 1.5vw); 
 
   }
 
@@ -246,7 +246,7 @@ body {
      h1 {
          font-size: 30px;
      }
-     
+
 
  
     .username, #quote, #author {
