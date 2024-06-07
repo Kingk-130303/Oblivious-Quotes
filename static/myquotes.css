@@ -83,37 +83,7 @@ h1 {
     color: #c1b4b4;
 }
 
-@media (max-width: 768px) {
-    .container {
-         padding: 10px;
-     }
- 
-     h1 {
-         font-size: 30px;
-     }
-
-
- 
-  
- 
-      #quote-container p, #quote-container div, #author-quotes-container {
-          margin: 10px;
-          font-size: (1vh + 1.5vw);
-      }
- 
-     #author-quotes-container {
-         max-height: 200px;
-     }
- }
-  
  @media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-
-    .container {
-        padding: 10px;
-    }
 
     h1 {
         font-size: calc(2vh + 2vw); 
@@ -123,16 +93,17 @@ h1 {
     #quote-container, #author-quotes-container {
         margin: 10px;
         padding: 10px;
-        font-size: calc(1vh + 1.5vw); 
+        font-size: 18px; 
     }
 
     #author-quotes-container {
+        font-size: 18px;
         max-height: 200px;
     }
 
     #remove-button, #back-button {
         padding: 8px 8px;
-        font-size: calc(1vh + 1vw); 
+        font-size: 18px; 
     }
 }
 
