@@ -260,9 +260,7 @@ body {
      #author-quotes-container {
          max-height: 200px;
      }
-     #myquotes-button,#logout-button,#login-button,#add-search-quote-button,#add-button,#refresh-button {
-       padding: 2px 2px;
-     }
+     
  }
   
   

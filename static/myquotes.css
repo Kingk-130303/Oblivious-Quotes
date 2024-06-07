@@ -100,11 +100,11 @@ h1 {
 
 
  
-    .username, #quote, #author {
+    /* .username, #quote, #author {
          font-size: 18px;
-     }
+     } */
  
-      #quote-container, #author-quotes-container {
+      #quote-container p, #quote-container div, #author-quotes-container {
           margin: 10px;
       }
  
@@ -126,14 +126,11 @@ h1 {
         font-size: calc(2vh + 2vw); /* Adjusted to be responsive */
     }
 
-    .username, #quote, #author {
-        font-size: calc(1.5vh + 1.5vw); /* Adjusted to be responsive */
-    }
 
     #quote-container, #author-quotes-container {
         margin: 10px;
         padding: 10px;
-        font-size: calc(0.8vh + 0.8vw); /* Adjusted to be responsive */
+        font-size: calc(1vh + 1vw); /* Adjusted to be responsive */
     }
 
     #author-quotes-container {
@@ -142,7 +139,7 @@ h1 {
 
     #remove-button, #back-button {
         padding: 8px 8px;
-        font-size: calc(0.7vh + 0.7vw); /* Adjusted to be responsive */
+        font-size: calc(1vh + 1vw); /* Adjusted to be responsive */
     }
 }
 
