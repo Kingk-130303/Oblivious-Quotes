@@ -89,6 +89,9 @@ h1 {
         font-size: calc(2vh + 2vw); 
     }
 
+    #quote-container{
+        font-size: xx-large;
+    }
 
     #quote-container p, #quotes-container div{
         margin: 10px;
