@@ -1,3 +1,4 @@
+from datetime import timedelta
 from flask import Flask, render_template, jsonify, Response, request, url_for, redirect, session
 from bson import json_util
 import requests
@@ -29,6 +30,11 @@ def get_user_info(access_token):
 
 app = Flask(__name__,static_url_path='/static')
 app.secret_key = env.get("APP_SECRET_KEY")
+app.config.update(
+    SESSION_COOKIE_SAMESITE="None",
+    SESSION_COOKIE_SECURE=True,
+)
+
 
 oauth = OAuth(app)
 oauth.register(
@@ -47,13 +53,14 @@ def login():
         redirect_uri=url_for("callback", _external=True)
     )
 
-
 @app.route("/callback", methods=["GET", "POST"])
 def callback():
     token = oauth.auth0.authorize_access_token()
-    # print(token)
     session["user"] = token
+    session.permanent = True  
+    app.permanent_session_lifetime = timedelta(days=7)
     return redirect("/")
+
 
 @app.route("/logout")
 def logout():
