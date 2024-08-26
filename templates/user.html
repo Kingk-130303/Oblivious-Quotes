@@ -14,8 +14,11 @@
       <button id="myquotes-button" onclick="RedirectToMyQuotesPage()">&#128196; My Quotes</button>
       <button id="logout-button" onclick="RedirectToHomePage()"> &#128274; Logout</button>
     </nav>
-    <!-- <div class="username">Welcome!! {{ user_info.get('name') }}</div> -->
-    <div class="container">
+    {% if user_info %}
+    <div class="username">Welcome!! {{ user_info.get('name', 'Guest') }}</div>
+  {% else %}
+    <div class="username">Welcome!! Guest</div>
+  {% endif %}    <div class="container">
       <div id="quote-container">
         <p id="quote">Loading.....</p>
         <p id="author"></p>
