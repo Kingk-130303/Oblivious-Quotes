@@ -1,1 +1,4 @@
-This is a random quote generator website along with facility to search for quotes by author name and the user can also save quotes to read in future.
+## url - http://obquotes.vercel.app/
+<hr/>
+
+# Discover, save, and search inspiring quotes on the Oblivious-Quotes website, your ultimate destination for wisdom and motivation.
